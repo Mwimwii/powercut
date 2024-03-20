@@ -1,5 +1,12 @@
-import { createTimeFromDate, remainingTime, removeProvince, toTitleCase, formatDay, remainingTimePercent } from '@/utils';
-import { addDays, addHours } from "date-fns";
+import {
+  createTimeFromDate,
+  remainingTime,
+  removeProvince,
+  toTitleCase,
+  formatDay,
+  remainingTimePercent,
+} from '@/utils';
+import { addDays, addHours } from 'date-fns';
 
 describe('Utility Functions', () => {
   describe('createTimeFromDate', () => {
@@ -56,7 +63,7 @@ describe('Utility Functions', () => {
       expect(remainingTimePercent(startDate, endDate)).toBeCloseTo(expected);
     });
     it('calculates remaining time at the middle of the event', () => {
-      const endDate = addHours(new Date(),12);
+      const endDate = addHours(new Date(), 12);
       const startDate = addDays(endDate, -1);
       const expected = 50;
       expect(remainingTimePercent(startDate, endDate)).toBeCloseTo(expected);
@@ -66,15 +73,15 @@ describe('Utility Functions', () => {
     it.each([
       {
         inputDate: addDays(new Date(), 1),
-        expected: "Tomorrow",
+        expected: 'Tomorrow',
       },
       {
         inputDate: new Date(),
-        expected: "Today",
+        expected: 'Today',
       },
       {
         inputDate: addDays(new Date(), -1),
-        expected: "Yesterday",
+        expected: 'Yesterday',
       },
     ])('formats the $inputDate relative to the current day', ({ inputDate, expected }) => {
       expect(formatDay(inputDate)).toEqual(expected);

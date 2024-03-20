@@ -11,12 +11,16 @@ import {
   Transition,
   useMantineTheme,
 } from '@mantine/core';
-import {  format, isWithinInterval } from 'date-fns';
+import { format, isWithinInterval } from 'date-fns';
 import { ScheduleCardProps } from '@/types';
-import { formatDay, remainingTime, remainingTimePercent, removeProvince, toTitleCase } from '@/utils';
-import ScheduleCardProgess from "./ScheduleCardProgress";
-
-
+import {
+  formatDay,
+  remainingTime,
+  remainingTimePercent,
+  removeProvince,
+  toTitleCase,
+} from '@/utils';
+import ScheduleCardProgess from './ScheduleCardProgress';
 
 const ScheduleCard = ({ data, province }: ScheduleCardProps) => {
   const theme = useMantineTheme();
@@ -31,7 +35,7 @@ const ScheduleCard = ({ data, province }: ScheduleCardProps) => {
 
   const timeToGo = remainingTime(scheduleStartDate, currentDate);
   const progressValue = remainingTimePercent(scheduleStartDate, scheduleEndDate);
-  
+
   return (
     <Card shadow="sm" padding="lg" radius="md" mb={10}>
       <Group style={{ marginBottom: 10, marginTop: theme.spacing.sm }}>
