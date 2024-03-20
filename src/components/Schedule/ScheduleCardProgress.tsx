@@ -18,9 +18,9 @@ const ScheduleCardProgess = ({ value }: { value: number }) => {
       transition="scale-x"
       duration={700}
       timingFunction="ease"
-      >
+    >
       {(transitionStyle) => (
-          <Progress
+        <Progress
           value={progressValue}
           pos="absolute"
           h={7}
@@ -29,8 +29,8 @@ const ScheduleCardProgess = ({ value }: { value: number }) => {
           right={0}
           color="red"
           style={{ ...transitionStyle, backgroundColor: 'inherit', zIndex: 1 }}
-          />
-          )}
+        />
+      )}
     </Transition>
   );
 };
