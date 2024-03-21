@@ -9,7 +9,6 @@ export function ColorSchemeToggle() {
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"
       size="lg"
-      ml={30}
       style={(theme) => ({
         backgroundColor: 'transparent',
         color: colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.blue[6],
